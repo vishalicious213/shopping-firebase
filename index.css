@@ -6,12 +6,29 @@ html, body {
     background-color: #EEF0F4;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: .5rem;
+    max-width: 320px;
+    margin: 1rem auto 0;
+    padding: 1rem;
+}
+
+img {
+    width: 150px;
+}
+
 input {
     color: #432000;
-    background-color: #DCE1EB
+    background-color: #DCE1EB;
+    width: 90%;
 }
 
 button {
     color: #FDFDFD;
     background-color: #AC485A;
+    width: 90%;
 }
