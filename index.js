@@ -24,6 +24,5 @@ addButton.addEventListener("click", function() {
 
 function addToShoppingList(item) {
     push(shoppingListInDB, item)
-    console.log(item)
-
+    shoppingList.innerHTML += `<li>${item}</li>`
 }
