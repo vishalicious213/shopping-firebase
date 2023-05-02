@@ -13,8 +13,6 @@ const inputField = document.getElementById("input-field")
 const addButton = document.getElementById("add-button")
 const shoppingList = document.getElementById("shopping-list")
 
-
-
 // ⬇️ EVENT LISTENERS ⬇️
 
 addButton.addEventListener("click", function() {
@@ -27,7 +25,6 @@ addButton.addEventListener("click", function() {
 
 function addToShoppingList(item) {
     push(shoppingListInDB, item)
-    shoppingList.innerHTML += `<li>${item}</li>`
 }
 
 function clearInputField() {
@@ -36,10 +33,22 @@ function clearInputField() {
 
 // ⬇️ RENDER THE APP ⬇️
 
+function clearRenderedList() {
+    shoppingList.innerHTML = ""
+}
+
+function renderItem(item) {
+    shoppingList.innerHTML += `<li>${item}</li>`
+}
+
 function getShoppingListFromDB() {
     onValue(shoppingListInDB, function(snapshot) {
         const retrievedList = Object.values(snapshot.val())
-        console.log(retrievedList)
+
+        clearRenderedList()
+        retrievedList.forEach(item => {
+            renderItem(item)
+        })
     })
 }
 
