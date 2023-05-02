@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
     databaseURL: "https://shopping-firebase-c3b42-default-rtdb.firebaseio.com/"
@@ -12,6 +12,8 @@ const shoppingListInDB = ref(database, "shoppingList")
 const inputField = document.getElementById("input-field")
 const addButton = document.getElementById("add-button")
 const shoppingList = document.getElementById("shopping-list")
+
+
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -31,3 +33,14 @@ function addToShoppingList(item) {
 function clearInputField() {
     inputField.value = ""
 }
+
+// ⬇️ RENDER THE APP ⬇️
+
+function getShoppingListFromDB() {
+    onValue(shoppingListInDB, function(snapshot) {
+        const retrievedList = Object.values(snapshot.val())
+        console.log(retrievedList)
+    })
+}
+
+getShoppingListFromDB()
