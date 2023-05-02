@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
     databaseURL: "https://shopping-firebase-c3b42-default-rtdb.firebaseio.com/"
@@ -16,5 +16,6 @@ const addButton = document.getElementById("add-button")
 
 addButton.addEventListener("click", function() {
     let inputValue = inputField.value
+    push(shoppingListInDB, inputValue)
     console.log(inputValue)
 })
