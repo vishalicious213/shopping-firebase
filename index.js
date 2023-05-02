@@ -18,6 +18,7 @@ const shoppingList = document.getElementById("shopping-list")
 addButton.addEventListener("click", function() {
     let inputValue = inputField.value
     addToShoppingList(inputValue)
+    clearInputField()
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
@@ -25,4 +26,8 @@ addButton.addEventListener("click", function() {
 function addToShoppingList(item) {
     push(shoppingListInDB, item)
     shoppingList.innerHTML += `<li>${item}</li>`
+}
+
+function clearInputField() {
+    inputField.value = ""
 }
