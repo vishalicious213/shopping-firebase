@@ -22,6 +22,10 @@ addButton.addEventListener("click", function() {
     clearInputField()
 })
 
+shoppingList.addEventListener("click", function(e) {
+    console.log(e.target.id)
+})
+
 // ⬇️ EVENT HANDLERS ⬇️
 
 function addToShoppingList(item) {
@@ -39,7 +43,7 @@ function clearRenderedList() {
 }
 
 function renderItem(item) {
-    shoppingList.innerHTML += `<li>${item}</li>`
+    shoppingList.innerHTML += `<li id="${item[0]}">${item[1]}</li>`
 }
 
 function getShoppingListFromDB() {
@@ -48,9 +52,10 @@ function getShoppingListFromDB() {
 
         clearRenderedList()
         retrievedList.forEach(item => {
-            let currentItemID = item[0]
-            let currentItemValue = item[1]
-            renderItem(currentItemValue)
+            // let currentItemID = item[0]
+            // let currentItemValue = item[1]
+            // renderItem(currentItemValue)
+            renderItem(item)
         })
     })
 }
