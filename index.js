@@ -23,14 +23,10 @@ addButton.addEventListener("click", function() {
 })
 
 shoppingList.addEventListener("click", function(e) {
-    // console.log(e.target.id)
     const itemID = e.target.id
-    console.log(itemID)
-
     const itemLocationInDB = ref(database, `shoppingList/${itemID}`)
-    console.log(itemLocationInDB.key)
 
-    remove(itemLocationInDB)
+    removeItem(itemLocationInDB)
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
@@ -41,6 +37,10 @@ function addToShoppingList(item) {
 
 function clearInputField() {
     inputField.value = ""
+}
+
+function removeItem(item) {
+    remove(item)
 }
 
 // ⬇️ RENDER THE APP ⬇️
