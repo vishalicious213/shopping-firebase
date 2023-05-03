@@ -55,12 +55,16 @@ function renderItem(item) {
 
 function getShoppingListFromDB() {
     onValue(shoppingListInDB, function(snapshot) {
-        const retrievedList = Object.entries(snapshot.val())
+        if (snapshot.exists()) {
+            const retrievedList = Object.entries(snapshot.val())
 
-        clearRenderedList()
-        retrievedList.forEach(item => {
-            renderItem(item)
-        })
+            clearRenderedList()
+            retrievedList.forEach(item => {
+                renderItem(item)
+            })
+        } else {
+            shoppingList.innerHTML = `Add an item to your cart`
+        }
     })
 }
 
