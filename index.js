@@ -59,9 +59,6 @@ function getShoppingListFromDB() {
 
         clearRenderedList()
         retrievedList.forEach(item => {
-            // let currentItemID = item[0]
-            // let currentItemValue = item[1]
-            // renderItem(currentItemValue)
             renderItem(item)
         })
     })
