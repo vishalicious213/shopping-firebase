@@ -18,8 +18,10 @@ const shoppingList = document.getElementById("shopping-list")
 
 addButton.addEventListener("click", function() {
     let inputValue = inputField.value
-    addToShoppingList(inputValue)
-    clearInputField()
+    if (inputValue) {
+        addToShoppingList(inputValue)
+        clearInputField()
+    }
 })
 
 shoppingList.addEventListener("click", function(e) {
