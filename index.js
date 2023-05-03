@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 // firebase settings
 const appSettings = {
@@ -23,7 +23,14 @@ addButton.addEventListener("click", function() {
 })
 
 shoppingList.addEventListener("click", function(e) {
-    console.log(e.target.id)
+    // console.log(e.target.id)
+    const itemID = e.target.id
+    console.log(itemID)
+
+    const itemLocationInDB = ref(database, `shoppingList/${itemID}`)
+    console.log(itemLocationInDB.key)
+
+    remove(itemLocationInDB)
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
