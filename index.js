@@ -1,14 +1,15 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
+// firebase settings
 const appSettings = {
     databaseURL: "https://shopping-firebase-c3b42-default-rtdb.firebaseio.com/"
 }
-
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shoppingList")
 
+// app elements
 const inputField = document.getElementById("input-field")
 const addButton = document.getElementById("add-button")
 const shoppingList = document.getElementById("shopping-list")
@@ -43,11 +44,13 @@ function renderItem(item) {
 
 function getShoppingListFromDB() {
     onValue(shoppingListInDB, function(snapshot) {
-        const retrievedList = Object.values(snapshot.val())
+        const retrievedList = Object.entries(snapshot.val())
 
         clearRenderedList()
         retrievedList.forEach(item => {
-            renderItem(item)
+            let currentItemID = item[0]
+            let currentItemValue = item[1]
+            renderItem(currentItemValue)
         })
     })
 }
