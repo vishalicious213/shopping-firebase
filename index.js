@@ -24,6 +24,14 @@ addButton.addEventListener("click", function() {
     }
 })
 
+inputField.addEventListener("keypress", function(e) {
+    let inputValue = inputField.value
+    if (inputValue && e.key === "Enter") {
+        addToShoppingList(inputValue)
+        clearInputField()
+    }
+})
+
 shoppingList.addEventListener("click", function(e) {
     const itemID = e.target.id
     const itemLocationInDB = ref(database, `shoppingList/${itemID}`)
