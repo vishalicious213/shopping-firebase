@@ -16,5 +16,21 @@ My code differs from the instructor's implementation in several ways:
 - push()
 - onValue()
 - remove()
+- snapshot.exists()
+
+## JavaScript concepts
+
+- import
+- functions
+- document.getElementById()
+    - .value
+    - .innerHTML
+- addEventListener()
+    - events
+    - event.target.id
+    - click
+- Object.entries
+- forEach
+- string/template literals
 
 Deployed at: https://vish213-fb-shopping.netlify.app/
