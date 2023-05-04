@@ -51,19 +51,22 @@ function clearRenderedList() {
     shoppingList.innerHTML = ""
 }
 
-function renderItem(item) {
-    shoppingList.innerHTML += `<li id="${item[0]}">${item[1]}</li>`
+function renderItems(list) {
+    shoppingList.innerHTML = list
 }
 
 function getShoppingListFromDB() {
     onValue(shoppingListInDB, function(snapshot) {
         if (snapshot.exists()) {
             const retrievedList = Object.entries(snapshot.val())
+            let renderList = ""
 
-            clearRenderedList()
             retrievedList.forEach(item => {
-                renderItem(item)
+                renderList += `<li id="${item[0]}">${item[1]}</li>`
             })
+            
+            clearRenderedList()
+            renderItems(renderList)
         } else {
             shoppingList.innerHTML = `Add an item to your cart`
         }
