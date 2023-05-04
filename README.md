@@ -9,6 +9,10 @@ My code differs from the instructor's implementation in several ways:
 - The instructor adds an __event listener__ to every item in the shopping cart to connect the given item to Firebase, delete it from the database and remove it from the list if it's clicked. This method requires a lot of processing from the browser. I used a single event listener in the shopping list and have it listen to the `event.target.id` that's clicked to determine what item needs to be deleted. The original implementation requires an event listener for every item, so 20 items will need 20 event listeners. Mine uses only one, regardless of the number of items.
 - Users can press `Enter` on their keyboard to add an item to the list (as well as clicking on the `Add to cart` button).
 
+Deployed at: https://vish213-fb-shopping.netlify.app/
+
+![](https://github.com/vishalicious213/shopping-firebase/blob/main/img/screenshot.jpg)
+
 ## Firebase concepts
 
 - initializeApp()
@@ -55,5 +59,3 @@ My code differs from the instructor's implementation in several ways:
 - module imports
 - meta viewport
 - site.webmanifest
-
-Deployed at: https://vish213-fb-shopping.netlify.app/
