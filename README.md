@@ -47,4 +47,12 @@ My code differs from the instructor's implementation in several ways:
 - list-style: none
 - box-shadow
 
+## HTML concepts
+
+- favicons
+- Google fonts
+- module imports
+- meta viewport
+- site.webmanifest
+
 Deployed at: https://vish213-fb-shopping.netlify.app/
