@@ -33,4 +33,18 @@ My code differs from the instructor's implementation in several ways:
 - forEach
 - string/template literals
 
+## CSS concepts
+
+- user-select: none
+- display: flex
+    - flex-direction
+    - align-items
+    - justify-content
+    - flex-wrap
+    - gap
+    - flex-grow: 1
+- cursor: pointer
+- list-style: none
+- box-shadow
+
 Deployed at: https://vish213-fb-shopping.netlify.app/
