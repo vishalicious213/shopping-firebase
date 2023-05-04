@@ -2,6 +2,8 @@
 
 This is my implementation of the [Build a Mobile App with Firebase](https://scrimba.com/learn/firebase) course from Scrimba. The project uses __HTML__, __CSS__ and __JavaScript__ to build the front end of a shopping list application. __Firebase__ is used for data persistence.
 
+Items can be added to the shopping list by typing an item's name into the input field and then clicking the __Add to cart__ button or pressing __Enter__ on the user's keyboard. Items can be removed from the cart (and from the Firebase database) by clicking on them in the list.
+
 My code differs from the instructor's implementation in several ways:
 
 - I separate interactivity into __event listeners__ and __event handlers__ in my projects to maintain *separation of concerns*. This gives me the option to enhance event handlers and use them with different user interactions if needed. The original implementation combines event handler functionality into the event listeners, which is less flexible.
