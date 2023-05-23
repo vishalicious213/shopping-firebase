@@ -1,6 +1,6 @@
 # Shopping List with Firebase DB
 
-This is my implementation of the [Build a Mobile App with Firebase](https://scrimba.com/learn/firebase) course from Scrimba. The project uses __HTML__, __CSS__ and __JavaScript__ to build the front end of a shopping list application. __Firebase__ is used for data persistence.
+This is my implementation of the main project from the [Build a Mobile App with Firebase](https://scrimba.com/learn/firebase) course from Scrimba. It was also incorporated into Module 3 (Making Websites Interactive) of Scrimba's [Frontend Developer Path](https://scrimba.com/learn/frontend). The project uses __HTML__, __CSS__ and __JavaScript__ to build the front end of a shopping list application. __Firebase__ is used for data persistence.
 
 Items can be added to the shopping list by typing an item's name into the input field and then clicking the __Add to cart__ button or pressing __Enter__ on the user's keyboard. Items can be removed from the cart (and from the Firebase database) by clicking on them in the list.
 
